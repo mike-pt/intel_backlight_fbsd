@@ -2,7 +2,7 @@
 
 update_brightness()
 (
-	BRIGHTNESS=$(( `sysctl -n dev.isl.0.ir` / 10 ))
+	BRIGHTNESS=$(sysctl -n hw.dri.0.i915_backlight)
 	if [ $BRIGHTNESS -lt 10 ]; then
 		BRIGHTNESS=10  
 	fi
